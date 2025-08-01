@@ -1,0 +1,30 @@
+{
+  "name": "unifiedcodes/arbor-template",
+  "description": "A minimal scaffold example using the Arbor PHP micro-framework.",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Harshit Mishra",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.1",
+    "unifiedcodes/arbor": "dev-main"
+  },
+  "autoload": {
+    "psr-4": {
+      "Arbor\\": "src/",
+      "App\\": "./",
+      "web\\": "web/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/unifiedcodes/arbor"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": false
+}
