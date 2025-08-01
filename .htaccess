@@ -1,0 +1,45 @@
+# .htaccess Configuration File
+# 
+# IMPORTANT: Customize & Harden security settings before deploying to production
+#
+# This file provides URL rewriting and security configurations for a web application
+# with a front controller structure. It redirects all requests to public/index.php
+# while allowing direct access to static assets and blocking PHP execution outside
+# the public directory.
+#
+# Features:
+# - Redirects all requests to public/index.php (front controller pattern)
+# - Allows direct serving of static files (CSS, JS, images, fonts, etc.)
+# - Disables directory browsing for security
+# - Blocks PHP execution outside the public directory
+# - Preserves query strings in redirected requests
+#
+#
+# Directory Structure Expected:
+# /
+# ├── .htaccess (this file)
+# ├── public/
+# │   └── index.php (application entry point)
+# └── [other application files]
+
+Options -Indexes
+
+# Enable rewrite engine
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Allow static files if they exist
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteCond %{REQUEST_URI} \.(css|js|jpg|jpeg|png|gif|svg|webp|ico|woff|woff2|ttf|eot|pdf|zip|mp4|mp3|avi|mov)$ [NC]
+    RewriteRule .* - [L]
+    
+    # Redirect all other requests to public/index.php
+    RewriteRule ^(.*)$ public/index.php [QSA,L]
+</IfModule>
+
+# Block PHP execution everywhere except public directory
+<FilesMatch "\.ph(ar|p[0-9]|tml|ps|t)$">
+    <If "%{REQUEST_URI} !~ m#^/public/#">
+        Require all denied
+    </If>
+</FilesMatch>
