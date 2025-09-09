@@ -4,32 +4,32 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c4c68906ff219aad9cd0b5ee03d99ef9",
+    "content-hash": "c7052e90e0dcc337e46666e423ffb858",
     "packages": [
         {
             "name": "unifiedcodes/arbor",
-            "version": "dev-main",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unifiedcodes/arbor.git",
-                "reference": "52b73a5f09e49a9130bc9b7e1bfb7949d77e83bf"
+                "reference": "fed8fe7084316a0a82981d5ffec25c9f579dd7c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unifiedcodes/arbor/zipball/52b73a5f09e49a9130bc9b7e1bfb7949d77e83bf",
-                "reference": "52b73a5f09e49a9130bc9b7e1bfb7949d77e83bf",
+                "url": "https://api.github.com/repos/unifiedcodes/arbor/zipball/fed8fe7084316a0a82981d5ffec25c9f579dd7c9",
+                "reference": "fed8fe7084316a0a82981d5ffec25c9f579dd7c9",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.1"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "Arbor\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache-2.0"
             ],
@@ -38,7 +38,7 @@
                     "name": "Harshit Mishra",
                     "email": "info@unifiedcodes.com",
                     "homepage": "https://unifiedcodes.com",
-                    "role": "Developer"
+                    "role": "Lead Developer"
                 }
             ],
             "description": "A modular PHP micro-framework for fast, modern application development.",
@@ -53,20 +53,18 @@
                 "psr"
             ],
             "support": {
+                "docs": "https://github.com/unifiedcodes/arbor/wiki",
                 "issues": "https://github.com/unifiedcodes/arbor/issues",
-                "source": "https://github.com/unifiedcodes/arbor",
-                "docs": "https://github.com/unifiedcodes/arbor/wiki"
+                "source": "https://github.com/unifiedcodes/arbor"
             },
-            "time": "2025-07-24T17:21:47+00:00"
+            "time": "2025-09-09T16:18:31+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "dev",
-    "stability-flags": {
-        "unifiedcodes/arbor": 20
-    },
-    "prefer-stable": false,
+    "minimum-stability": "stable",
+    "stability-flags": {},
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.1"

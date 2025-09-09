@@ -5,7 +5,9 @@ namespace App\providers;
 use Arbor\contracts\container\ServiceProvider;
 use Arbor\container\ServiceContainer;
 use Arbor\contracts\Container\ContainerInterface;
+use Arbor\facades\Config;
 use Arbor\http\context\RequestStack;
+use Arbor\http\RequestFactory;
 
 /**
  * Class RequestProvider
@@ -26,6 +28,11 @@ class RequestProvider extends ServiceProvider
      */
     public function register(ContainerInterface $container): void
     {
+        $rootURI = Config::get('root.uri');
+
+        // singleton binding requestfactory
+        $container->singleton(RequestFactory::class, fn() => new RequestFactory($rootURI));
+
         // Singleton binding ensures consistent request stack
         $container->singleton(RequestStack::class, fn() => new RequestStack());
     }
@@ -37,7 +44,10 @@ class RequestProvider extends ServiceProvider
      */
     public function provides(): array
     {
-        return [RequestStack::class];
+        return [
+            RequestFactory::class,
+            RequestStack::class
+        ];
     }
 
     /**
@@ -48,6 +58,7 @@ class RequestProvider extends ServiceProvider
     public function aliases(): array
     {
         return [
+            'requestFactory' => RequestFactory::class,
             'requestStack' => RequestStack::class,
         ];
     }

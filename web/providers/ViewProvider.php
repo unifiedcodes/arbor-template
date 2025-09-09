@@ -65,8 +65,8 @@ class ViewProvider extends ServiceProvider
 
         $viewFactory->setConfig(
             [
-                'assets_url' => Config::get('app.assets_url'),
-                'statics_url' => Config::get('app.statics_url'),
+                'assets_dir' => Config::get('app.assets_dir'),
+                'statics_dir' => Config::get('root.statics_dir'),
             ]
         );
 

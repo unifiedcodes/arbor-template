@@ -40,8 +40,6 @@ class RouterProvider extends ServiceProvider
     {
         $container->singleton(Router::class, function (): Router {
 
-            $baseURI = Config::get('app.base_uri');
-
             $requestStack = Container::get(RequestStack::class);
 
             return new Router($requestStack);
@@ -61,12 +59,12 @@ class RouterProvider extends ServiceProvider
      */
     public function boot(ContainerInterface $container): void
     {
-        /** @var Router $router */
         $router = $container->make(Router::class);
 
         // set router instance in facade.
         Route::setInstance($router);
 
+        $rootDir = (string) Config::get('root.dir');
         $routesDir = (string) Config::get('app.routes_dir');
 
         // Load the main application routes
@@ -74,11 +72,7 @@ class RouterProvider extends ServiceProvider
             'namespace' => 'web'
         ]);
 
-        $router->groupByFile($routesDir . '/web.php');
-
-
-        // Load error page definitions
-        $router->errorPagesByFile($routesDir . '/errorPages.php');
+        $router->groupByDir($rootDir . $routesDir);
     }
 
     /**

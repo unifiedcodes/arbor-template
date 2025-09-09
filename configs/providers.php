@@ -21,7 +21,7 @@ return [
      * class names, enabling more concise syntax throughout the codebase.
      */
     'App\providers\AliasProvider',
-    
+
     /**
      * Request Provider
      * 
@@ -30,4 +30,6 @@ return [
      * data available throughout the application in a standardized format.
      */
     'App\providers\RequestProvider',
+
+    'App\providers\DatabaseProvider'
 ];
