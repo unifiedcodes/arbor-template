@@ -69,7 +69,7 @@ class RouterProvider extends ServiceProvider
 
         // Load the main application routes
         $router->groupOptions([
-            'namespace' => 'web'
+            'prefix' => ''
         ]);
 
         $router->groupByDir($rootDir . $routesDir);
