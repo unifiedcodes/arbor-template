@@ -1,6 +1,6 @@
 <?php
 
-namespace web\providers;
+namespace App\web\providers;
 
 use Arbor\contracts\container\ServiceProvider;
 use Arbor\container\ServiceContainer;

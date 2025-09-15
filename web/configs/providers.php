@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'web\providers\RouterProvider',
-    'web\providers\ViewProvider',
+    'App\web\providers\RouterProvider',
+    'App\web\providers\ViewProvider',
 ];

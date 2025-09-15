@@ -3,13 +3,13 @@
 namespace middlewares;
 
 
-use Arbor\contracts\handlers\MiddlewareInterface;
+use Arbor\contracts\middleware\StageInterface;
 use Arbor\http\context\RequestContext;
 use Arbor\http\Response;
 
 
 
-class AuthN implements MiddlewareInterface
+class AuthN implements StageInterface
 {
     public function process(RequestContext $input, callable $next): Response
     {
@@ -19,7 +19,6 @@ class AuthN implements MiddlewareInterface
 
         return $next($input);
     }
-
 
     public function checkuser()
     {

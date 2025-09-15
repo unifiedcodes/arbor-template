@@ -1,18 +1,17 @@
 <?php
 
-namespace web\controllers;
+namespace App\web\controllers;
 
-
-use Arbor\contracts\handlers\Controller;
-use Arbor\http\context\RequestContext;
+use Arbor\facades\Respond;
 use Arbor\http\Response;
+use Arbor\http\context\RequestContext;
 
 
-class Home extends Controller
+class Home
 {
-    public function process(RequestContext $input): Response
+    public function __invoke(RequestContext $input): Response
     {
-        return $this->response::json([
+        return Respond::json([
             'Welcome to Arbor',
             'this is the minimal setup of a project based on arbor, feel free to customise according to your needs.'
         ]);

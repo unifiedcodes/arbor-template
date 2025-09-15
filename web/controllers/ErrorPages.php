@@ -1,52 +1,35 @@
 <?php
 
 
-namespace web\controllers;
+namespace App\web\controllers;
 
-
-use Arbor\contracts\handlers\ControllerInterface;
+use Arbor\facades\Respond;
 use Arbor\http\Response;
 use Arbor\http\context\RequestContext;
 
-
-class ErrorPages implements ControllerInterface
+// error responses can be replaced with custom view template using Respond::errorTemplate method.
+class ErrorPages
 {
-    public function process(RequestContext $input): Response
+    public function __invoke(RequestContext $input): Response
     {
-        return new Response(
-            'something went wrong.',
-            500,
-            ['Content-Type' => 'text/plain'],
-        );
+        return Respond::error(500, 'something went wrong');
     }
 
 
     public function notFound(): Response
     {
-        return new Response(
-            'handler reached for not found !',
-            404,
-            ['Content-Type' => 'text/plain'],
-        );
+        return Respond::error(404, 'handler not found');
     }
 
 
     public function notAllowed(): Response
     {
-        return new Response(
-            'handler reached for not allowed !',
-            403,
-            ['Content-Type' => 'text/plain'],
-        );
+        return Respond::error(403, 'not allowed');
     }
 
 
     public function methodNotAllowed(): Response
     {
-        return new Response(
-            'handler reached for method not allowed !',
-            405,
-            ['Content-Type' => 'text/plain'],
-        );
+        return Respond::error(405, 'method not allowed');
     }
 }

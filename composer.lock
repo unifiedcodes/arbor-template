@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "unifiedcodes/arbor",
-            "version": "v1.0.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unifiedcodes/arbor.git",
-                "reference": "fed8fe7084316a0a82981d5ffec25c9f579dd7c9"
+                "reference": "62aa4dba450f53ba26becf21ec75235f6b136771"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unifiedcodes/arbor/zipball/fed8fe7084316a0a82981d5ffec25c9f579dd7c9",
-                "reference": "fed8fe7084316a0a82981d5ffec25c9f579dd7c9",
+                "url": "https://api.github.com/repos/unifiedcodes/arbor/zipball/62aa4dba450f53ba26becf21ec75235f6b136771",
+                "reference": "62aa4dba450f53ba26becf21ec75235f6b136771",
                 "shasum": ""
             },
             "require": {
@@ -57,7 +57,7 @@
                 "issues": "https://github.com/unifiedcodes/arbor/issues",
                 "source": "https://github.com/unifiedcodes/arbor"
             },
-            "time": "2025-09-09T16:18:31+00:00"
+            "time": "2025-09-15T18:37:56+00:00"
         }
     ],
     "packages-dev": [],

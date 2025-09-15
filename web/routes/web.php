@@ -1,8 +1,8 @@
 <?php
 
 use Arbor\facades\Route;
-use web\controllers\Home;
-use web\controllers\ErrorPages;
+use App\web\controllers\Home;
+use App\web\controllers\ErrorPages;
 
 
 // ============== ROUTE REGISTRATION ============== //
