@@ -14,9 +14,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Arbor\\": "src/",
-      "App\\": "./",
-      "web\\": "web/"
+      "App\\": "./"
     }
   },
   "minimum-stability": "stable",
